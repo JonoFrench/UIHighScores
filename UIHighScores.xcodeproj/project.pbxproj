@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3481DC2D23D88F6A00FA7FF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3481DC2C23D88F6A00FA7FF6 /* Foundation.framework */; };
 		34BC995923D854360024A1BA /* UIHighScores.h in Headers */ = {isa = PBXBuildFile; fileRef = 34BC995723D854360024A1BA /* UIHighScores.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34BC996823D855220024A1BA /* UIHighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC996723D855220024A1BA /* UIHighScores.swift */; };
 		34BC996A23D855500024A1BA /* UIAlphaNumeric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BC996523D854CD0024A1BA /* UIAlphaNumeric.framework */; };
@@ -31,14 +30,14 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		34BC996C23D855510024A1BA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 				34BC996B23D855500024A1BA /* UIAlphaNumeric.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -60,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3481DC2D23D88F6A00FA7FF6 /* Foundation.framework in Frameworks */,
 				34BC996A23D855500024A1BA /* UIAlphaNumeric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

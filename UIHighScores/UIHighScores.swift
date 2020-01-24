@@ -16,39 +16,62 @@ var coreDataStack = CoreDataStack(modelName: "HighScores")
 
 public class UIHighScores {
     
+    public var titleString = "HiScores"
+    public var titleFCol = UIColor.blue
+    public var titleBCol = UIColor.yellow
+    public var scoreFCol = UIColor.red
+    public var scoreBCol = UIColor.white
+    
+    public var newTitleString = "New Hi Score"
+    public var newTitleFCol = UIColor.orange
+    public var newTitleBCol = UIColor.green
+    
+    public var newSubTitleString = "Enter your initials"
+    public var newSubTitleFCol = UIColor.blue
+    public var newSubTitleBCol = UIColor.yellow
 
+    public var newInitialFCol = UIColor.orange
+    public var newInitialBCol = UIColor.clear
+
+    public var newInitialHilightCol = UIColor.red.cgColor
+
+    public var textPadding:Int = 2
+    
     lazy var managedObjectContext: NSManagedObjectContext = {
         var coreDataStack = CoreDataStack(modelName: "HighScores")
-
         return CoreDataStack.moc
     }()
-
 
     var hiScores:[HighScores] = []
     var startPos:CGFloat = 0.0
     public var highScoreView:UIView
     public var newHighScoreView:UIView?
     var alphaStringView:[StringView] = [StringView(),StringView(),StringView()]
-    var alphaChar:[Int] = [0,0,0]
+    var alphaChar:[Int] = [10,10,10]
     public var alphaPos:Int = 0
+    var viewWidth:CGFloat = 0
     //var coreDataStack:CoreDataStack?
     
     
     public init(xPos:CGFloat,yPos:CGFloat,width:CGFloat,height:CGFloat) {
         startPos = xPos + width
+        viewWidth = width
+        let headHeight = Int((height / 100) * 20)
+        let scoreHeight = Int(((height / 100) * 80) / 10)
         highScoreView = UIView.init(frame: CGRect(x: startPos, y: yPos, width: width, height: height))
-        highScoreView.backgroundColor = UIColor(white: 1.0, alpha: 0.25)
+        highScoreView.backgroundColor = .clear
         let alpha:UIAlphaNumeric = UIAlphaNumeric()
         let w = Int(width)
         getScores()
-        let title = UIView(frame: CGRect(x: 0, y: 20, width: w, height: 60))
-        title.addSubview(alpha.get(string: "HiScores", size: (title.frame.size), fcol: .orange, bcol:.green ))
+        let title = UIView(frame: CGRect(x: 20, y: 0, width: w - 40, height: headHeight))
+        title.addSubview(alpha.get(string: titleString, size: (title.frame.size), fcol: titleFCol, bcol:
+            titleBCol ))
         title.backgroundColor = .clear
         startPos = highScoreView.center.x
         highScoreView.addSubview(title)
         for (index,h) in hiScores.enumerated() {
-            let hscore = UIView(frame: CGRect(x: 0, y: 80 + (index * 40), width: w, height: 30))
-            hscore.addSubview(alpha.get(string: "\(h.initials!) \(String(format: "%06d", h.score))", size: (hscore.frame.size), fcol: .orange, bcol:.green ))
+            let hscore = UIView(frame: CGRect(x: 40, y: headHeight + textPadding + (index * scoreHeight), width: w - 80, height: scoreHeight - textPadding))
+            hscore.addSubview(alpha.get(string: "\(h.initials!) \(String(format: "%06d", h.score))", size: (hscore.frame.size), fcol: scoreFCol, bcol:scoreBCol))
             hscore.backgroundColor = .clear
             highScoreView.addSubview(hscore)
         }
@@ -62,8 +85,6 @@ public class UIHighScores {
                                                          ascending: false)]
         fetchRequest.fetchLimit = 10
         do {
-            print("Getting scores")
-            
             hiScores = try managedObjectContext.fetch(fetchRequest)
 
         } catch {
@@ -105,19 +126,20 @@ public class UIHighScores {
         let alpha:UIAlphaNumeric = UIAlphaNumeric()
         let w = Int(frame.width)
         let title = UIView(frame: CGRect(x: 0, y: 20, width: w, height: 60))
-        title.addSubview(alpha.get(string: "New Hi Score", size: (title.frame.size), fcol: .orange, bcol:.green ))
+        title.addSubview(alpha.get(string: newTitleString, size: (title.frame.size), fcol: newTitleFCol, bcol:newTitleBCol ))
         title.backgroundColor = .clear
         newHighScoreView?.addSubview(title)
         let subtitle = UIView(frame: CGRect(x: 0, y: 90, width: w, height: 40))
-        subtitle.addSubview(alpha.get(string: "Enter your initials", size: (title.frame.size), fcol: .orange, bcol:.green ))
+        subtitle.addSubview(alpha.get(string: newSubTitleString, size: (title.frame.size), fcol: newSubTitleFCol, bcol:newSubTitleBCol ))
         subtitle.backgroundColor = .clear
         newHighScoreView?.addSubview(subtitle)
-        
+
+        let xPositions = xPositionsForSprites(spriteWidth: 60, offSet: 90, numberOfSprites: 3)
         for (index,i) in alphaChar.enumerated() {
-            let xPositions = [90 - 30,(w / 2) - 30 ,w - 90 - 30] //((w / 3) * index) + 60,
+            //let xPositions = [90 - 30,(w / 2) - 30 ,w - 90 - 30] //((w / 3) * index) + 60,
             let charView = UIView(frame: CGRect(x: xPositions[index], y: 180 , width: 60, height: 60))
 
-            alphaStringView[index] = (alpha.getCharView(char: alpha.getCharacter(pos:i),size: (charView.frame.size), fcol: .orange, bcol:.green ))
+            alphaStringView[index] = (alpha.getCharView(char: alpha.getCharacter(pos:i),size: (charView.frame.size), fcol: newInitialFCol, bcol:newInitialBCol ))
             charView.addSubview(alphaStringView[index].charView!)
             newHighScoreView?.addSubview(charView)
         }
@@ -129,13 +151,13 @@ public class UIHighScores {
             i.charView?.layer.borderWidth = 2.0
             i.charView?.layer.borderColor = UIColor.clear.cgColor
         }
-        alphaStringView[alphaPos].charView?.layer.borderColor = UIColor.red.cgColor
+        alphaStringView[alphaPos].charView?.layer.borderColor = newInitialHilightCol
     }
     
     public func charUp(){
         let alpha:UIAlphaNumeric = UIAlphaNumeric()
         alphaChar[alphaPos] = alpha.nextChar(pos:alphaChar[alphaPos] )
-        alpha.updateChar(char: alpha.getCharacter(pos:alphaChar[alphaPos]), viewArray: alphaStringView[alphaPos].charViewArray, fcol: .orange, bcol: .green)
+        alpha.updateChar(char: alpha.getCharacter(pos:alphaChar[alphaPos]), viewArray: alphaStringView[alphaPos].charViewArray, fcol: newInitialFCol, bcol: newInitialBCol)
 
         
     }
@@ -143,9 +165,7 @@ public class UIHighScores {
     public func charDown(){
         let alpha:UIAlphaNumeric = UIAlphaNumeric()
         alphaChar[alphaPos] = alpha.prevChar(pos:alphaChar[alphaPos] )
-        alpha.updateChar(char: alpha.getCharacter(pos:alphaChar[alphaPos]), viewArray: alphaStringView[alphaPos].charViewArray, fcol: .orange, bcol: .green)
-
-        
+        alpha.updateChar(char: alpha.getCharacter(pos:alphaChar[alphaPos]), viewArray: alphaStringView[alphaPos].charViewArray, fcol: newInitialFCol, bcol: newInitialBCol)
     }
     
     public func getInitialsString() -> String {
@@ -175,29 +195,27 @@ public class UIHighScores {
         highScoreView.removeFromSuperview()
     }
     
-    
+    public func xPositionsForSprites(spriteWidth:Int,offSet:Int,numberOfSprites:Int ) -> [Int] {
+        var intArray:[Int] = []
+        let actualWidth = Int(viewWidth) - (offSet * 2)
+        let step = (actualWidth) / (numberOfSprites - 1)
+        intArray.append(offSet) // first will always be
+        print("Offset \(offSet)")
+        if numberOfSprites > 2 {
+        for i in 1...numberOfSprites-2 {
+            let x = (step * (i)) + (spriteWidth)
+            intArray.append(x)
+            }
+        }
+        intArray.append(actualWidth + (spriteWidth / 2))//last will always be frame we want to use - sprite width
+        print("screen width \(viewWidth) step \(step) actual width \(actualWidth) int array \(intArray)")
+        return intArray
+    }
     
     lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-         */
         let container = NSPersistentContainer(name: "HighScores")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -212,8 +230,6 @@ public class UIHighScores {
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
