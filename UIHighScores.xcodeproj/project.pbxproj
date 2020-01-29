@@ -9,23 +9,12 @@
 /* Begin PBXBuildFile section */
 		34BC995923D854360024A1BA /* UIHighScores.h in Headers */ = {isa = PBXBuildFile; fileRef = 34BC995723D854360024A1BA /* UIHighScores.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34BC996823D855220024A1BA /* UIHighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC996723D855220024A1BA /* UIHighScores.swift */; };
-		34BC996A23D855500024A1BA /* UIAlphaNumeric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BC996523D854CD0024A1BA /* UIAlphaNumeric.framework */; };
-		34BC996B23D855500024A1BA /* UIAlphaNumeric.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34BC996523D854CD0024A1BA /* UIAlphaNumeric.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34BC997223D855CD0024A1BA /* HighScores+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997123D855CD0024A1BA /* HighScores+CoreDataProperties.swift */; };
 		34BC997323D855CD0024A1BA /* HighScores+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997023D855CD0024A1BA /* HighScores+CoreDataClass.swift */; };
 		34BC997523D855E50024A1BA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997423D855E50024A1BA /* CoreDataStack.swift */; };
 		34BC997623D856F60024A1BA /* HighScores.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 34BC996D23D8559E0024A1BA /* HighScores.xcdatamodeld */; };
+		34FC7B9423E0A303007E0E3A /* UIAlphaNumeric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FC7B9223E0A275007E0E3A /* UIAlphaNumeric.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		34BC996423D854CD0024A1BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34BC995F23D854CD0024A1BA /* UIAlphaNumeric.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 348F9F9023D7230A0007FC65;
-			remoteInfo = UIAlphaNumeric;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		34BC996C23D855510024A1BA /* Embed Frameworks */ = {
@@ -34,7 +23,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				34BC996B23D855500024A1BA /* UIAlphaNumeric.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,12 +34,13 @@
 		34BC995423D854360024A1BA /* UIHighScores.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIHighScores.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BC995723D854360024A1BA /* UIHighScores.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIHighScores.h; sourceTree = "<group>"; };
 		34BC995823D854360024A1BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34BC995F23D854CD0024A1BA /* UIAlphaNumeric.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIAlphaNumeric.xcodeproj; path = ../UIAlphaNumeric/UIAlphaNumeric.xcodeproj; sourceTree = "<group>"; };
 		34BC996723D855220024A1BA /* UIHighScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHighScores.swift; sourceTree = "<group>"; };
 		34BC996E23D8559E0024A1BA /* HighScores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HighScores.xcdatamodel; sourceTree = "<group>"; };
 		34BC997023D855CD0024A1BA /* HighScores+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HighScores+CoreDataClass.swift"; path = "/Users/jonathanfrench/Projects/UIHighScores/UIHighScores/HighScores+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		34BC997123D855CD0024A1BA /* HighScores+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HighScores+CoreDataProperties.swift"; path = "/Users/jonathanfrench/Projects/UIHighScores/UIHighScores/HighScores+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		34BC997423D855E50024A1BA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		34FC7B9023E0A00C007E0E3A /* UIAlphaNumeric.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIAlphaNumeric.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34FC7B9223E0A275007E0E3A /* UIAlphaNumeric.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIAlphaNumeric.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34BC996A23D855500024A1BA /* UIAlphaNumeric.framework in Frameworks */,
+				34FC7B9423E0A303007E0E3A /* UIAlphaNumeric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +58,6 @@
 		34BC994A23D854360024A1BA = {
 			isa = PBXGroup;
 			children = (
-				34BC995F23D854CD0024A1BA /* UIAlphaNumeric.xcodeproj */,
 				34BC995623D854360024A1BA /* UIHighScores */,
 				34BC995523D854360024A1BA /* Products */,
 				34BC996923D855500024A1BA /* Frameworks */,
@@ -98,17 +86,11 @@
 			path = UIHighScores;
 			sourceTree = "<group>";
 		};
-		34BC996023D854CD0024A1BA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				34BC996523D854CD0024A1BA /* UIAlphaNumeric.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		34BC996923D855500024A1BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34FC7B9223E0A275007E0E3A /* UIAlphaNumeric.framework */,
+				34FC7B9023E0A00C007E0E3A /* UIAlphaNumeric.framework */,
 				3481DC2C23D88F6A00FA7FF6 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -137,6 +119,7 @@
 				34BC995123D854360024A1BA /* Frameworks */,
 				34BC995223D854360024A1BA /* Resources */,
 				34BC996C23D855510024A1BA /* Embed Frameworks */,
+				34FC7B9523E0ACD7007E0E3A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -173,28 +156,12 @@
 			mainGroup = 34BC994A23D854360024A1BA;
 			productRefGroup = 34BC995523D854360024A1BA /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 34BC996023D854CD0024A1BA /* Products */;
-					ProjectRef = 34BC995F23D854CD0024A1BA /* UIAlphaNumeric.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				34BC995323D854360024A1BA /* UIHighScores */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		34BC996523D854CD0024A1BA /* UIAlphaNumeric.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = UIAlphaNumeric.framework;
-			remoteRef = 34BC996423D854CD0024A1BA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		34BC995223D854360024A1BA /* Resources */ = {
@@ -206,6 +173,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34FC7B9523E0ACD7007E0E3A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then \n    rm -fr Frameworks\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		34BC995023D854360024A1BA /* Sources */ = {
@@ -273,7 +260,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -330,7 +318,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
