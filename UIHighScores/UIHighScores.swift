@@ -44,13 +44,17 @@ public class UIHighScores {
 
     var hiScores:[HighScores] = []
     var startPos:CGFloat = 0.0
-    public var highScoreView:UIView
-    public var newHighScoreView:UIView?
+    public var highScoreView:UIView = UIView()
+    public var newHighScoreView:UIView = UIView()
     var alphaStringView:[StringView] = [StringView(),StringView(),StringView()]
     var alphaChar:[Int] = [10,10,10]
     public var alphaPos:Int = 0
     var viewWidth:CGFloat = 0
     //var coreDataStack:CoreDataStack?
+    
+    public init(){
+        getScores()
+    }
     
     
     public init(xPos:CGFloat,yPos:CGFloat,width:CGFloat,height:CGFloat) {
@@ -122,17 +126,17 @@ public class UIHighScores {
     
     public func showNewHiScore(frame:CGRect) {
         newHighScoreView = UIView.init(frame: frame)
-        newHighScoreView?.backgroundColor = .clear
+        newHighScoreView.backgroundColor = .clear
         let alpha:UIAlphaNumeric = UIAlphaNumeric()
         let w = Int(frame.width)
         let title = UIView(frame: CGRect(x: 0, y: 20, width: w, height: 60))
         title.addSubview(alpha.get(string: newTitleString, size: (title.frame.size), fcol: newTitleFCol, bcol:newTitleBCol ))
         title.backgroundColor = .clear
-        newHighScoreView?.addSubview(title)
+        newHighScoreView.addSubview(title)
         let subtitle = UIView(frame: CGRect(x: 0, y: 90, width: w, height: 40))
         subtitle.addSubview(alpha.get(string: newSubTitleString, size: (title.frame.size), fcol: newSubTitleFCol, bcol:newSubTitleBCol ))
         subtitle.backgroundColor = .clear
-        newHighScoreView?.addSubview(subtitle)
+        newHighScoreView.addSubview(subtitle)
 
         let xPositions = xPositionsForSprites(spriteWidth: 60, offSet: 90, numberOfSprites: 3)
         for (index,i) in alphaChar.enumerated() {
@@ -141,12 +145,16 @@ public class UIHighScores {
 
             alphaStringView[index] = (alpha.getCharView(char: alpha.getCharacter(pos:i),size: (charView.frame.size), fcol: newInitialFCol, bcol:newInitialBCol ))
             charView.addSubview(alphaStringView[index].charView!)
-            newHighScoreView?.addSubview(charView)
+            newHighScoreView.addSubview(charView)
         }
         hilightChar()
     }
     
     public func hilightChar() {
+        guard alphaPos < alphaStringView.count else {
+            print("oops \(alphaPos)")
+            return
+        }
         for i in alphaStringView {
             i.charView?.layer.borderWidth = 2.0
             i.charView?.layer.borderColor = UIColor.clear.cgColor
