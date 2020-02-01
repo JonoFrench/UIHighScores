@@ -17,7 +17,11 @@ var coreDataStack = CoreDataStack(modelName: "HighScores")
 public class UIHighScores {
     
     public var titleString = "HiScores"
-    public var titleFCol = UIColor.blue
+    public var titleFCol = UIColor.blue {
+        didSet {
+            //title.
+        }
+    }
     public var titleBCol = UIColor.yellow
     public var scoreFCol = UIColor.red
     public var scoreBCol = UIColor.white
@@ -52,6 +56,8 @@ public class UIHighScores {
     var viewWidth:CGFloat = 0
     //var coreDataStack:CoreDataStack?
     
+    var title = UIView()
+    
     public init(){
         getScores()
     }
@@ -67,7 +73,7 @@ public class UIHighScores {
         let alpha:UIAlphaNumeric = UIAlphaNumeric()
         let w = Int(width)
         getScores()
-        let title = UIView(frame: CGRect(x: 20, y: 0, width: w - 40, height: headHeight))
+        title = UIView(frame: CGRect(x: 20, y: 0, width: w - 40, height: headHeight))
         title.addSubview(alpha.get(string: titleString, size: (title.frame.size), fcol: titleFCol, bcol:
             titleBCol ))
         title.backgroundColor = .clear
