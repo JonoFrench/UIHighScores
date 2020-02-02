@@ -57,7 +57,10 @@ public class UIHighScores {
     //var coreDataStack:CoreDataStack?
     
     var title = UIView()
-    
+ 
+    var headHeight:Int = 0
+    var scoreHeight:Int = 0
+
     public init(){
         getScores()
     }
@@ -66,25 +69,45 @@ public class UIHighScores {
     public init(xPos:CGFloat,yPos:CGFloat,width:CGFloat,height:CGFloat) {
         startPos = xPos + width
         viewWidth = width
-        let headHeight = Int((height / 100) * 20)
-        let scoreHeight = Int(((height / 100) * 80) / 10)
+        headHeight = Int((height / 100) * 20)
+        scoreHeight = Int(((height / 100) * 80) / 10)
         highScoreView = UIView.init(frame: CGRect(x: startPos, y: yPos, width: width, height: height))
         highScoreView.backgroundColor = .clear
-        let alpha:UIAlphaNumeric = UIAlphaNumeric()
-        let w = Int(width)
-        getScores()
-        title = UIView(frame: CGRect(x: 20, y: 0, width: w - 40, height: headHeight))
-        title.addSubview(alpha.get(string: titleString, size: (title.frame.size), fcol: titleFCol, bcol:
-            titleBCol ))
-        title.backgroundColor = .clear
-        startPos = highScoreView.center.x
-        highScoreView.addSubview(title)
-        for (index,h) in hiScores.enumerated() {
-            let hscore = UIView(frame: CGRect(x: 40, y: headHeight + textPadding + (index * scoreHeight), width: w - 80, height: scoreHeight - textPadding))
-            hscore.addSubview(alpha.get(string: "\(h.initials!) \(String(format: "%06d", h.score))", size: (hscore.frame.size), fcol: scoreFCol, bcol:scoreBCol))
-            hscore.backgroundColor = .clear
-            highScoreView.addSubview(hscore)
-        }
+//        drawScores()
+//        let alpha:UIAlphaNumeric = UIAlphaNumeric()
+//        let w = Int(width)
+//        getScores()
+//        title = UIView(frame: CGRect(x: 20, y: 0, width: w - 40, height: headHeight))
+//        title.addSubview(alpha.get(string: titleString, size: (title.frame.size), fcol: titleFCol, bcol:
+//            titleBCol ))
+//        title.backgroundColor = .clear
+//        startPos = highScoreView.center.x
+//        highScoreView.addSubview(title)
+//        for (index,h) in hiScores.enumerated() {
+//            let hscore = UIView(frame: CGRect(x: 40, y: headHeight + textPadding + (index * scoreHeight), width: w - 80, height: scoreHeight - textPadding))
+//            hscore.addSubview(alpha.get(string: "\(h.initials!) \(String(format: "%06d", h.score))", size: (hscore.frame.size), fcol: scoreFCol, bcol:scoreBCol))
+//            hscore.backgroundColor = .clear
+//            highScoreView.addSubview(hscore)
+//        }
+        
+    }
+    
+    public func drawScoreView(){
+               let alpha:UIAlphaNumeric = UIAlphaNumeric()
+               let w = Int(viewWidth)
+               getScores()
+               title = UIView(frame: CGRect(x: 20, y: 0, width: w - 40, height: headHeight))
+               title.addSubview(alpha.get(string: titleString, size: (title.frame.size), fcol: titleFCol, bcol:
+                   titleBCol ))
+               title.backgroundColor = .clear
+               startPos = highScoreView.center.x
+               highScoreView.addSubview(title)
+               for (index,h) in hiScores.enumerated() {
+                   let hscore = UIView(frame: CGRect(x: 40, y: headHeight + textPadding + (index * scoreHeight), width: w - 80, height: scoreHeight - textPadding))
+                   hscore.addSubview(alpha.get(string: "\(h.initials!) \(String(format: "%06d", h.score))", size: (hscore.frame.size), fcol: scoreFCol, bcol:scoreBCol))
+                   hscore.backgroundColor = .clear
+                   highScoreView.addSubview(hscore)
+               }
         
     }
     
