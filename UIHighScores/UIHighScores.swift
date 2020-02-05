@@ -9,8 +9,11 @@
 import Foundation
 import UIKit
 import CoreData
+#if TVOS
+import UIAlphaNumericTV
+#else
 import UIAlphaNumeric
-
+#endif
 var coreDataStack = CoreDataStack(modelName: "HighScores")
 
 

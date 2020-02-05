@@ -37,7 +37,11 @@ class CoreDataStack {
 
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let frameworkBundleIdentifier = "com.jaypeeff.UIHighScores"
+        #if TVOS
+            let frameworkBundleIdentifier = "com.jaypeeff.UIHighScoresTV"
+        #else
+            let frameworkBundleIdentifier = "com.jaypeeff.UIHighScores"
+        #endif
         let customKitBundle = Bundle(identifier: frameworkBundleIdentifier)!
         let modelURL = customKitBundle.url(forResource: "HighScores", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!

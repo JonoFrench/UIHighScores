@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344A8B1423E9A20F0012AFF9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997423D855E50024A1BA /* CoreDataStack.swift */; };
+		344A8B1523E9A20F0012AFF9 /* HighScores+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997023D855CD0024A1BA /* HighScores+CoreDataClass.swift */; };
+		344A8B1623E9A20F0012AFF9 /* HighScores+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997123D855CD0024A1BA /* HighScores+CoreDataProperties.swift */; };
+		344A8B1723E9A20F0012AFF9 /* HighScores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34BC996D23D8559E0024A1BA /* HighScores.xcdatamodeld */; };
+		344A8B1823E9A20F0012AFF9 /* UIHighScores.h in Sources */ = {isa = PBXBuildFile; fileRef = 34BC995723D854360024A1BA /* UIHighScores.h */; };
+		344A8B1A23E9A20F0012AFF9 /* UIHighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC996723D855220024A1BA /* UIHighScores.swift */; };
 		34BC995923D854360024A1BA /* UIHighScores.h in Headers */ = {isa = PBXBuildFile; fileRef = 34BC995723D854360024A1BA /* UIHighScores.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34BC996823D855220024A1BA /* UIHighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC996723D855220024A1BA /* UIHighScores.swift */; };
 		34BC997223D855CD0024A1BA /* HighScores+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997123D855CD0024A1BA /* HighScores+CoreDataProperties.swift */; };
 		34BC997323D855CD0024A1BA /* HighScores+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997023D855CD0024A1BA /* HighScores+CoreDataClass.swift */; };
 		34BC997523D855E50024A1BA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC997423D855E50024A1BA /* CoreDataStack.swift */; };
 		34BC997623D856F60024A1BA /* HighScores.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 34BC996D23D8559E0024A1BA /* HighScores.xcdatamodeld */; };
+		34C882BF23E8B4AF0018BB21 /* UIHighScoresTV.h in Headers */ = {isa = PBXBuildFile; fileRef = 34C882BD23E8B4AF0018BB21 /* UIHighScoresTV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34C882D523E8B5030018BB21 /* UIAlphaNumericTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C882D423E8B5030018BB21 /* UIAlphaNumericTV.framework */; };
+		34C882D623E8B5030018BB21 /* UIAlphaNumericTV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34C882D423E8B5030018BB21 /* UIAlphaNumericTV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34FC7B9423E0A303007E0E3A /* UIAlphaNumeric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FC7B9223E0A275007E0E3A /* UIAlphaNumeric.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +32,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34C882D723E8B5030018BB21 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				34C882D623E8B5030018BB21 /* UIAlphaNumericTV.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,6 +59,10 @@
 		34BC997023D855CD0024A1BA /* HighScores+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HighScores+CoreDataClass.swift"; path = "/Users/jonathanfrench/Projects/UIHighScores/UIHighScores/HighScores+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		34BC997123D855CD0024A1BA /* HighScores+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HighScores+CoreDataProperties.swift"; path = "/Users/jonathanfrench/Projects/UIHighScores/UIHighScores/HighScores+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		34BC997423D855E50024A1BA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		34C882BB23E8B4AF0018BB21 /* UIHighScoresTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIHighScoresTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34C882BD23E8B4AF0018BB21 /* UIHighScoresTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIHighScoresTV.h; sourceTree = "<group>"; };
+		34C882BE23E8B4AF0018BB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34C882D423E8B5030018BB21 /* UIAlphaNumericTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIAlphaNumericTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC7B9023E0A00C007E0E3A /* UIAlphaNumeric.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIAlphaNumeric.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC7B9223E0A275007E0E3A /* UIAlphaNumeric.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIAlphaNumeric.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -52,6 +76,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34C882B823E8B4AF0018BB21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34C882D523E8B5030018BB21 /* UIAlphaNumericTV.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				34BC995623D854360024A1BA /* UIHighScores */,
+				34C882BC23E8B4AF0018BB21 /* UIHighScoresTV */,
 				34BC995523D854360024A1BA /* Products */,
 				34BC996923D855500024A1BA /* Frameworks */,
 			);
@@ -68,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				34BC995423D854360024A1BA /* UIHighScores.framework */,
+				34C882BB23E8B4AF0018BB21 /* UIHighScoresTV.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,11 +123,21 @@
 		34BC996923D855500024A1BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34C882D423E8B5030018BB21 /* UIAlphaNumericTV.framework */,
 				34FC7B9223E0A275007E0E3A /* UIAlphaNumeric.framework */,
 				34FC7B9023E0A00C007E0E3A /* UIAlphaNumeric.framework */,
 				3481DC2C23D88F6A00FA7FF6 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34C882BC23E8B4AF0018BB21 /* UIHighScoresTV */ = {
+			isa = PBXGroup;
+			children = (
+				34C882BD23E8B4AF0018BB21 /* UIHighScoresTV.h */,
+				34C882BE23E8B4AF0018BB21 /* Info.plist */,
+			);
+			path = UIHighScoresTV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +148,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BC995923D854360024A1BA /* UIHighScores.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34C882B623E8B4AF0018BB21 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34C882BF23E8B4AF0018BB21 /* UIHighScoresTV.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +182,25 @@
 			productReference = 34BC995423D854360024A1BA /* UIHighScores.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		34C882BA23E8B4AF0018BB21 /* UIHighScoresTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34C882C223E8B4AF0018BB21 /* Build configuration list for PBXNativeTarget "UIHighScoresTV" */;
+			buildPhases = (
+				34C882B623E8B4AF0018BB21 /* Headers */,
+				34C882B723E8B4AF0018BB21 /* Sources */,
+				34C882B823E8B4AF0018BB21 /* Frameworks */,
+				34C882B923E8B4AF0018BB21 /* Resources */,
+				34C882D723E8B5030018BB21 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIHighScoresTV;
+			productName = UIHighScoresTV;
+			productReference = 34C882BB23E8B4AF0018BB21 /* UIHighScoresTV.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -142,6 +213,9 @@
 					34BC995323D854360024A1BA = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
+					};
+					34C882BA23E8B4AF0018BB21 = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -159,6 +233,7 @@
 			projectRoot = "";
 			targets = (
 				34BC995323D854360024A1BA /* UIHighScores */,
+				34C882BA23E8B4AF0018BB21 /* UIHighScoresTV */,
 			);
 		};
 /* End PBXProject section */
@@ -169,6 +244,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BC997623D856F60024A1BA /* HighScores.xcdatamodeld in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34C882B923E8B4AF0018BB21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +285,19 @@
 				34BC997323D855CD0024A1BA /* HighScores+CoreDataClass.swift in Sources */,
 				34BC997223D855CD0024A1BA /* HighScores+CoreDataProperties.swift in Sources */,
 				34BC996823D855220024A1BA /* UIHighScores.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34C882B723E8B4AF0018BB21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				344A8B1423E9A20F0012AFF9 /* CoreDataStack.swift in Sources */,
+				344A8B1523E9A20F0012AFF9 /* HighScores+CoreDataClass.swift in Sources */,
+				344A8B1623E9A20F0012AFF9 /* HighScores+CoreDataProperties.swift in Sources */,
+				344A8B1723E9A20F0012AFF9 /* HighScores.xcdatamodeld in Sources */,
+				344A8B1823E9A20F0012AFF9 /* UIHighScores.h in Sources */,
+				344A8B1A23E9A20F0012AFF9 /* UIHighScores.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +492,60 @@
 			};
 			name = Release;
 		};
+		34C882C023E8B4AF0018BB21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9GZ8FVR7LN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UIHighScoresTV/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DTVOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaypeeff.UIHighScoresTV;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.1;
+			};
+			name = Debug;
+		};
+		34C882C123E8B4AF0018BB21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9GZ8FVR7LN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UIHighScoresTV/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DTVOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaypeeff.UIHighScoresTV;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -414,6 +563,15 @@
 			buildConfigurations = (
 				34BC995D23D854360024A1BA /* Debug */,
 				34BC995E23D854360024A1BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34C882C223E8B4AF0018BB21 /* Build configuration list for PBXNativeTarget "UIHighScoresTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34C882C023E8B4AF0018BB21 /* Debug */,
+				34C882C123E8B4AF0018BB21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
